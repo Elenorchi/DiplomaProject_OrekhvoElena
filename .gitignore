@@ -1,0 +1,6 @@
+/chromedriver.exe
+
+/target/
+/allure-results/
+/build/
+/.idea/
