@@ -1,16 +1,17 @@
 package DriverOptions;
 
-import ObjectPages.Listener;
+import Helpers.Listener;
 import ObjectPages.OnlinerPages.StartPage;
 import com.codeborne.selenide.WebDriverRunner;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
-import static com.codeborne.selenide.Configuration.timeout;;
+;
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.WebDriverRunner.driver;
-import static com.codeborne.selenide.Configuration.browserSize;
 
 @Listeners(Listener.class)
 public abstract class BaseTestSelenide {
