@@ -12,9 +12,14 @@ public class FileUploadTest extends BaseTestSelenide {
     protected String username = "ellenorree@gmail.com";
     protected String password = "QA07_onl2021";
 
+    @BeforeMethod
+    public void pre() {
+        login = startPage.ClickEnterButton();
+    }
+
     @Test (description = "Checking ability to upload profile photo ")
     public void uploadPicture() {
-        login = startPage.ClickEnterButton().loginToApplication(username,password );
+        login.loginToApplication(username,password );
         upload.uploadPicture();
     }
 

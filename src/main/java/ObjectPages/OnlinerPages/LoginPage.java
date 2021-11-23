@@ -21,6 +21,7 @@ public class LoginPage extends BasePage {
     private SelenideElement avatarLogo = $(byCssSelector("div[class='b-top-profile__image js-header-user-avatar']"));
     private SelenideElement noPasswordError = $(byXpath("//div[contains(text(),'Укажите пароль')]"));
     private SelenideElement logoutBtn = $(byXpath("//*[@class = 'b-top-profile__link b-top-profile__link_secondary'][contains(text(),'Выйти')]"));
+    private SelenideElement incorrectPasswordError = $(byXpath("//div[contains(text(),'Неверный логин или пароль')]"));
 
     public LoginPage loginToApplication(String username, String password) {
         enter(this.username, username);
@@ -36,6 +37,10 @@ public class LoginPage extends BasePage {
 
     public LoginPage verifyNoPasswordError() {
         noPasswordError.shouldBe(visible, Duration.ofSeconds(5));
+        return this;
+    }
+    public LoginPage verifyIncorrectPasswordError() {
+        incorrectPasswordError.shouldBe(visible, Duration.ofSeconds(5));
         return this;
     }
 

@@ -32,8 +32,13 @@ public class CatalogTest extends BaseTestSelenide {
         catalog.verifyCatalog(element);
     }
 
+    @Test
+    public void checkInputLength () {
+        catalog.checkMaxInput();
+    }
+
     @Test (description = "Checking search tools, checkbox and pop-up window")
-    public void popUPwindow (){
+    public void popUPwindow(){
         catalog.verifyPopUP();
     }
 

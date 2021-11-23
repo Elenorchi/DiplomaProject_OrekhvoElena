@@ -1,6 +1,11 @@
 package ObjectPages.OnlinerPages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+import org.testng.annotations.AfterTest;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -15,13 +20,16 @@ public class StartPage {
         open(url);
         return new StartPage();
     }
-
     public LoginPage ClickEnterButton() {
         enterButton.click();
         return new LoginPage();
     }
     public CatalogPage ClickCatalogButton() {
-        catalogButton.click();
+        catalogButton.shouldBe(Condition.visible, Duration.ofSeconds(5)).click();
         return new CatalogPage();
+    }
+    @AfterTest
+    public void postconditions () {
+        WebDriverRunner.closeWebDriver();
     }
 }

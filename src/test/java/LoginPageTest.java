@@ -1,7 +1,8 @@
 
 import DriverOptions.BaseTestSelenide;
 import ObjectPages.OnlinerPages.LoginPage;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class LoginPageTest extends BaseTestSelenide {
     LoginPage loginPage;
@@ -13,13 +14,19 @@ public class LoginPageTest extends BaseTestSelenide {
         loginPage = startPage.ClickEnterButton();
     }
 
-    @Test(priority = 1, description ="Test for succesful login to Onliner")
+    @Test(priority = 1, description = "Test for succesful login to Onliner")
     public void succesfulLogin() {
         loginPage.loginToApplication(username, password).verifyLogin();
+        loginPage.logout();
     }
 
     @Test(priority = 2, description = "Test for checking error about empty password field")
-    public void failedLogin() {
+    public void noPasswordError() {
         loginPage.loginToApplication(username, "").verifyNoPasswordError();
+    }
+
+    @Test
+    public void incorrectPasswordError() {
+    loginPage.loginToApplication(username, "somestring").verifyIncorrectPasswordError();
     }
 }

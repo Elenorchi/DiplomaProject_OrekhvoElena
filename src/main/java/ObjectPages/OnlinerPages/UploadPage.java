@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class UploadPage extends BasePage {
 
     private SelenideElement avatarLogo = $(byCssSelector("div[class='b-top-profile__image js-header-user-avatar']"));
-    private String link = "C:\\Users\\DiplomaProject_OrekhvoElena\\115-1150092_png-file-person-icon.png";
+    private String link = "C:\\Users\\DiplomaProject_OrekhvoElena-master\\115-1150092_png-file-person-icon.png";
     private SelenideElement avatar = $(byXpath("//*[@class='profile-header__image profile-header__image_person profile-header__image_person_1']"));
     private SelenideElement profileID = $(byXpath("//*[@class ='b-top-profile__header']//a[contains (text(), '3386707')]"));
     private SelenideElement uploadingButton  =  $(byXpath("//*[@accept = 'image/x-png,image/png,image/jpeg,image/gif,.jpeg,.jpg,.png,.gif']"));
