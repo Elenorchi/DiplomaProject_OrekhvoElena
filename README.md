@@ -8,10 +8,10 @@
 
 Please make sure the release file is unpacked under  a Web-accessible directory. You will see the following files and directories:
 
-> #### src/main  - including all the test logic and additional files
-> #### src/test - including test runs
-> #### pom.xml - describing project configuration
-> #### README.md - this file
+> src/main  - including all the test logic and additional files
+> src/test - including test runs
+> pom.xml - describing project configuration
+> README.md - this file
 
 
 ---
