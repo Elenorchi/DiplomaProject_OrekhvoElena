@@ -19,7 +19,7 @@ Please make sure the release file is unpacked under  a Web-accessible directory.
 
 You can use TestNG library for running tests on your local machine.
 Choose the directory of the necessary test class and run it.
-![configurations](config.png)
+![configurations](config.png?raw=true "Title")
 
 ---
 ### REPORTING
