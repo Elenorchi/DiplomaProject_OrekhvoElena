@@ -1,5 +1,5 @@
 ## Diploma Project for QA Automation course
-#### *using Onliner.by  -   https://www.onliner.by/  
+ *using Onliner.by  -   https://www.onliner.by/  
 
 
 ---
