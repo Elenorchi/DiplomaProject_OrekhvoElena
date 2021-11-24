@@ -32,7 +32,7 @@ public class CatalogTest extends BaseTestSelenide {
         catalog.verifyCatalog(element);
     }
 
-    @Test
+    @Test (description = "Test checks the ability to put bigger number of apartment exceeding max input length")
     public void checkInputLength () {
         catalog.checkMaxInput();
     }

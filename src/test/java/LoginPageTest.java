@@ -14,7 +14,7 @@ public class LoginPageTest extends BaseTestSelenide {
         loginPage = startPage.ClickEnterButton();
     }
 
-    @Test(priority = 1, description = "Test for succesful login to Onliner")
+    @Test(priority = 1, description = "Test for succesful login to Onliner.by")
     public void succesfulLogin() {
         loginPage.loginToApplication(username, password).verifyLogin();
         loginPage.logout();
@@ -25,8 +25,8 @@ public class LoginPageTest extends BaseTestSelenide {
         loginPage.loginToApplication(username, "").verifyNoPasswordError();
     }
 
-    @Test
+    @Test(priority = 2, description = "Test for checking error about incorrect password")
     public void incorrectPasswordError() {
-    loginPage.loginToApplication(username, "somestring").verifyIncorrectPasswordError();
+        loginPage.loginToApplication(username, "somestring").verifyIncorrectPasswordError();
     }
 }

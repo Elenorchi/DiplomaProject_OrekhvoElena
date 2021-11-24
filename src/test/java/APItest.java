@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 
 public class APItest {
 
-    @Test
+    @Test (description = "Test verifies GET request for Onliner.by API ")
     public void checkResponseByTownID() {
         baseURI = "https://geo.api.onliner.by";
         String minskEndpoint = "/towns/17030";
@@ -18,7 +18,7 @@ public class APItest {
         Assert.assertEquals(root.district.name, "Минский");
     }
 
-    @Test
+    @Test (description ="Test for login through POST request")
     public void checkLogin() {
         baseURI = "https://www.onliner.by";
         String login = "/sdapi/user.api/login";

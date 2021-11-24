@@ -28,8 +28,4 @@ public class StartPage {
         catalogButton.shouldBe(Condition.visible, Duration.ofSeconds(5)).click();
         return new CatalogPage();
     }
-    @AfterTest
-    public void postconditions () {
-        WebDriverRunner.closeWebDriver();
-    }
 }
