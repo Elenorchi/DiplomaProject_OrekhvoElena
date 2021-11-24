@@ -23,7 +23,7 @@ Please make sure the release file is unpacked under  a Web-accessible directory.
 ---
 ### DRIVER IMPLEMENTATION
 
-Please check BaseTestSelenide.java class where the Driver starts.
+>Please check BaseTestSelenide.java class where the Driver starts.
 The following class sets driver configuration options, use Selenide method Open()  to start your browser and open URL you provided.
 All test classes where the driver is needed extend BaseTest class to get driver running.
 ---
