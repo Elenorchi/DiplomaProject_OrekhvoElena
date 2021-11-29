@@ -5,6 +5,6 @@
 /build/
 /.idea/
 /allure.png
-/report.png
+/src/main/java/Files/report.png
 /allure-results/
 /allure-report/
