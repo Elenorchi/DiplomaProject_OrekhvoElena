@@ -1,6 +1,9 @@
 
 import DriverOptions.BaseTestSelenide;
 import ObjectPages.OnlinerPages.LoginPage;
+import ObjectPages.OnlinerPages.StartPage;
+import com.codeborne.selenide.WebDriverRunner;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,7 +14,7 @@ public class LoginPageTest extends BaseTestSelenide {
 
     @BeforeMethod
     public void pre() {
-        loginPage = startPage.ClickEnterButton();
+        loginPage = get(StartPage.class, "Onliner").ClickEnterButton();
     }
 
     @Test(priority = 1, description = "Test for succesful login to Onliner.by")
@@ -28,5 +31,10 @@ public class LoginPageTest extends BaseTestSelenide {
     @Test(priority = 2, description = "Test for checking error about incorrect password")
     public void incorrectPasswordError() {
         loginPage.loginToApplication(username, "somestring").verifyIncorrectPasswordError();
+    }
+
+    @AfterMethod
+    public void postcondition() {
+        WebDriverRunner.closeWebDriver();
     }
 }

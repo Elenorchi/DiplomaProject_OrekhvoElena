@@ -1,38 +1,26 @@
 package DriverOptions;
 
 import Helpers.Listener;
-import ObjectPages.OnlinerPages.StartPage;
-import com.codeborne.selenide.WebDriverRunner;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import Properties.PropertyReader;
 import org.testng.annotations.Listeners;
 
-;
-import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.driver;
+
+;
 
 @Listeners(Listener.class)
 public abstract class BaseTestSelenide {
-    protected StartPage startPage;
-    String startPageUrl = "https://www.onliner.by/";
 
-
-    @BeforeTest
-    public void SetUpBrowser() {
-        browserSize = "1800x1000";
-        timeout = 5000;
+    public <Type> Type get(Class<Type> pageObjectClassClass) {
+        return driver().hasWebDriverStarted() ? page(pageObjectClassClass) : open(PropertyReader.getProperties().getProperty("url"), pageObjectClassClass);
     }
 
-    @BeforeMethod
-    public void OpenStartPage() {
-        startPage = StartPage.OpenStartPage(startPageUrl);
-    }
-
-    @AfterTest
-    public void closeDriver() {
-        if (driver() != null) {
-            WebDriverRunner.getWebDriver().close();
-        }
+    public <PageObjectClass> PageObjectClass get(Class<PageObjectClass> pageObjectClassClass, String env) {
+        PropertyReader propertyReader = new PropertyReader();
+        propertyReader.setProperties(env);
+        return get(pageObjectClassClass);
     }
 }
+

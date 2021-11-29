@@ -45,6 +45,7 @@ public class CatalogPage extends BasePage {
     public void checkMaxInput () {
         openLaptop();
         shop.shouldBe(visible, Duration.ofSeconds(10)).click();
+        NumberOfAppartament.shouldBe(visible,Duration.ofSeconds(10));
         enter (NumberOfAppartament,"1234567");
         Assert.assertFalse(NumberOfAppartament.getAttribute("value") == "1234567");
     }
