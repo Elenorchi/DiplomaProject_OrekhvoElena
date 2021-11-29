@@ -32,7 +32,7 @@ All test classes where the driver is needed extend BaseTest class to get driver 
 You can use TestNG library for running tests on your local machine.
 Choose the directory of the necessary test class and run it.
 
->![configurations](config.png?raw=true "Title")
+>![configurations](src/main/java/Files/config.png?raw=true "Title")
 ---
 ### API DOCUMENTATION
 
@@ -52,7 +52,7 @@ Use the following commands in terminal and check the link you receive.
 
 >The example of Allure Report:
 >
->![allure](report.png)
+>![allure](src/main/java/Files/report.png)
 
 ---
 ### WHAT'S NEXT 
