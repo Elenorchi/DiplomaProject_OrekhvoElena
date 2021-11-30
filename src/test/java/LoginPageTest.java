@@ -28,7 +28,7 @@ public class LoginPageTest extends BaseTestSelenide {
         loginPage.loginToApplication(username, "").verifyNoPasswordError();
     }
 
-    @Test(priority = 2, description = "Test for checking error about incorrect password")
+    @Test(priority = 3, description = "Test for checking error about incorrect password")
     public void incorrectPasswordError() {
         loginPage.loginToApplication(username, "somestring").verifyIncorrectPasswordError();
     }

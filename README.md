@@ -24,7 +24,7 @@ Please make sure the release file is unpacked under  a Web-accessible directory.
 ### DRIVER IMPLEMENTATION
 
 >Please check BaseTestSelenide.java class where the Driver starts.
-The following class sets driver configuration options, use Selenide method Open()  to start your browser and open URL you provided.
+The following class uses method Get() to start your browser and open URL you provided. To set configurations for your DriverRunner you can use SelenideConfiguration class.
 All test classes where the driver is needed extend BaseTest class to get driver running.
 ---
 ### QUICK START 

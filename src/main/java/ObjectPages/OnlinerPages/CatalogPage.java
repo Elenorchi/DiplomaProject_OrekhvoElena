@@ -22,7 +22,7 @@ public class CatalogPage extends BasePage {
     private SelenideElement checkBOX = $(byXpath("//*[@class = 'catalog-masthead-controls__input i-checkbox i-checkbox_yellow']"));
     private WebElement laptop = $(byXpath("//a[@href = 'https://catalog.onliner.by/notebook/apple/mgn63']"));
     private SelenideElement compareBtn = $(byXpath("//*[@class = 'compare-button__sub compare-button__sub_main']"));
-    private SelenideElement shop = $(byXpath("//*[@data-shop-id = '256']"));
+    private SelenideElement shop = $(byXpath("//*[@data-shop-id = '3886']"));
     private SelenideElement NumberOfAppartament = $(byXpath("//* [@class = 'input-style input-style_primary input-style_base cart-form__input cart-form__input_width_xxxxs cart-form__input_nonadaptive']"));
 
     public CatalogPage verifyCatalog(String element) {
@@ -44,7 +44,7 @@ public class CatalogPage extends BasePage {
     }
     public void checkMaxInput () {
         openLaptop();
-        shop.shouldBe(visible, Duration.ofSeconds(10)).click();
+        shop.shouldBe(visible, Duration.ofSeconds(15)).click();
         NumberOfAppartament.shouldBe(visible,Duration.ofSeconds(10));
         enter (NumberOfAppartament,"1234567");
         Assert.assertFalse(NumberOfAppartament.getAttribute("value") == "1234567");
